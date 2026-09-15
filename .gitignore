@@ -1,0 +1,9 @@
+.vscode/
+build/
+
+*.o
+*.out
+
+app
+black_scholes_tests
+option_example
