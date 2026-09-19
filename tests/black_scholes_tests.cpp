@@ -53,12 +53,12 @@ int main(){
     );
 
     EuropeanOption call_10(
-    OptionType::Call,
-    100.0,
-    100.0,
-    1.0,
-    0.05,
-    0.10
+        OptionType::Call,
+        100.0,
+        100.0,
+        1.0,
+        0.05,
+        0.10
     );
 
     EuropeanOption call_30(
@@ -146,7 +146,6 @@ int main(){
     cout << "Implied volatility (10% case): "<< implied_volatility_10 << endl;
     cout << "Implied volatility (30% case): "<< implied_volatility_30 << endl;
 
-
     
     cout <<"=================Test==============="<<endl;
     cout <<"Call...:"<<endl;
@@ -172,8 +171,5 @@ int main(){
     cout << "implied volatility 30%..." << endl;
     DisplayTest(volatility_30_test);
     cout <<"====================================="<<endl;
-
-
     return 0;
-
 }
