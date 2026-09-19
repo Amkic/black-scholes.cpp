@@ -8,11 +8,11 @@ The project started with the implementation of the Black-Scholes model and was p
 
 The option is represented by its main parameters:
 
-* Spot price \(S_0\)
-* Strike price \(K\)
-* Maturity \(T\)
-* Risk-free interest rate \(r\)
-* Volatility \(\sigma\)
+* Spot price $\(S_0\)$
+* Strike price $\(K\)$
+* Maturity $\(T\)$
+* Risk-free interest rate $\(r\)$
+* Volatility $\(\sigma\)$
 * Option type: Call or Put
 
 For example, the following parameters represent an at-the-money European Call:
@@ -333,8 +333,13 @@ and the Black-Scholes / Monte Carlo comparison with:
 
 ## Conclusion
 
-The project covers both analytical and numerical approaches to European option pricing.
+This project started from the analytical Black-Scholes model and progressively introduced numerical methods for option pricing. Monte Carlo provides a useful reference for understanding stochastic simulation, convergence and variance reduction, while also highlighting the computational cost of repeated pricing.
 
-Starting from the Black-Scholes formula, the implementation was extended with Greeks and implied volatility before adding Monte Carlo simulation. The Monte Carlo implementation was then tested for convergence and extended with antithetic variates to reduce the estimator variance.
+A natural extension is to investigate whether Deep Learning methods can be used as an alternative to Monte Carlo in some settings. Instead of running a full simulation for every pricing request, a neural network can be trained on a large set of simulated or analytical prices and then used as a fast approximation of the pricing function.
+
+This approach is particularly interesting when the pricing model becomes more complex or when a very large number of valuations are required. The trade-off is that the neural network introduces an approximation error and requires an initial training phase, so it does not simply replace Monte Carlo in every situation.
+
+This would be an interesting direction for extending the project from classical quantitative finance methods towards scientific machine learning and neural-network-based pricing.
+
 
 The main focus of the project is the implementation itself: taking the mathematical formulas, understanding the numerical methods behind them, and translating them into a small C++ pricing engine.
