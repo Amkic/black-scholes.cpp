@@ -201,10 +201,10 @@ I tested this by increasing the number of simulations:
 ```text
 Simulations    Price       Standard Error
 ------------------------------------------
-1,000          11.4193       0.5032
-10,000         10.5951       0.1477
-100,000        10.4741       0.0467
-1,000,000      10.4682       0.0148
+1000           11.4193       0.5032
+10000          10.5951       0.1477
+100000         10.4741       0.0467
+1000000        10.4682       0.0148
 ```
 
 The results show the expected reduction in the standard error as the number of simulations increases.
