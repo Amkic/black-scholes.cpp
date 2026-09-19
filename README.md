@@ -17,11 +17,13 @@ The option is represented by its main parameters:
 
 For example, the following parameters represent an at-the-money European Call:
 
-Spot = 100
-Strike = 100
-Maturity = 1 year
-Rate = 5%
-Volatility = 20%
+```text
+Spot        = 100
+Strike      = 100
+Maturity    = 1 year
+Rate        = 5%
+Volatility  = 20%
+```
 
 The option itself only contains these parameters. The pricing calculations are implemented separately in the pricing models.
 
@@ -196,12 +198,14 @@ $$
 
 I tested this by increasing the number of simulations:
 
+```text
 Simulations    Price       Standard Error
 ------------------------------------------
 1,000          11.4193       0.5032
 10,000         10.5951       0.1477
 100,000        10.4741       0.0467
 1,000,000      10.4682       0.0148
+```
 
 The results show the expected reduction in the standard error as the number of simulations increases.
 
@@ -277,3 +281,60 @@ The difference between the two prices is:
 $$
 |10.4741-10.4506| \approx 0.0235
 $$
+
+which is smaller than the usual scale of the Monte Carlo uncertainty in this simulation.
+
+Increasing the number of simulations makes the Monte Carlo estimate more precise and brings it closer to the analytical Black-Scholes value.
+
+## Implementation
+
+The code is split between the financial instrument and the pricing models.
+
+`EuropeanOption` stores the characteristics of the option.
+
+`BlackScholes` contains the analytical pricing formulas, Greeks, put-call parity check and implied volatility calculation.
+
+`MonteCarlo` contains the simulation-based pricing methods and the variance reduction implementation.
+
+The pricing models receive an `EuropeanOption` object by reference. The option itself is not responsible for calculating its price, which keeps the instrument and pricing logic separate.
+
+The project uses C++17 and the standard library. No external numerical or financial library is required for the pricing calculations.
+
+## Build
+
+The project uses CMake.
+
+From the project root:
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+The executables are generated in the `build` directory.
+
+For example:
+
+```bash
+./build/option_example
+```
+
+The Black-Scholes tests can be run with:
+
+```bash
+./build/black_scholes_tests
+```
+
+and the Black-Scholes / Monte Carlo comparison with:
+
+```bash
+./build/BS_MC_test
+```
+
+## Conclusion
+
+The project covers both analytical and numerical approaches to European option pricing.
+
+Starting from the Black-Scholes formula, the implementation was extended with Greeks and implied volatility before adding Monte Carlo simulation. The Monte Carlo implementation was then tested for convergence and extended with antithetic variates to reduce the estimator variance.
+
+The main focus of the project is the implementation itself: taking the mathematical formulas, understanding the numerical methods behind them, and translating them into a small C++ pricing engine.
