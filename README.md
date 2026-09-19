@@ -17,13 +17,11 @@ The option is represented by its main parameters:
 
 For example, the following parameters represent an at-the-money European Call:
 
-```text
-Spot        = 100
-Strike      = 100
-Maturity    = 1 year
-Rate        = 5%
-Volatility  = 20%
-```
+Spot = 100
+Strike = 100
+Maturity = 1 year
+Rate = 5%
+Volatility = 20%
 
 The option itself only contains these parameters. The pricing calculations are implemented separately in the pricing models.
 
@@ -198,14 +196,12 @@ $$
 
 I tested this by increasing the number of simulations:
 
-```text
 Simulations    Price       Standard Error
 ------------------------------------------
 1,000          11.4193       0.5032
 10,000         10.5951       0.1477
 100,000        10.4741       0.0467
 1,000,000      10.4682       0.0148
-```
 
 The results show the expected reduction in the standard error as the number of simulations increases.
 
