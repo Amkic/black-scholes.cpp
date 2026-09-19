@@ -280,37 +280,6 @@ The pricing models receive an `EuropeanOption` object by reference. The option i
 
 The project uses C++17 and the standard library. No external numerical or financial library is required for the pricing calculations.
 
-## Build
-
-The project uses CMake.
-
-From the project root:
-
-```bash
-cmake -S . -B build
-cmake --build build
-```
-
-The executables are generated in the `build` directory.
-
-For example:
-
-```bash
-./build/option_example
-```
-
-The Black-Scholes tests can be run with:
-
-```bash
-./build/black_scholes_tests
-```
-
-and the Black-Scholes / Monte Carlo comparison with:
-
-```bash
-./build/BS_MC_test
-```
-
 ## Conclusion
 
 This project started from the analytical Black-Scholes model and progressively introduced numerical methods for option pricing. Monte Carlo provides a useful reference for understanding stochastic simulation, convergence and variance reduction, while also highlighting the computational cost of repeated pricing.
