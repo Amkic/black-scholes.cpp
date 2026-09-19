@@ -104,13 +104,13 @@ These calculations use the same intermediate quantities as the pricing formula, 
 
 The project also includes an implied volatility calculation.
 
-Given a market option price, the objective is to find the volatility \(\sigma\) for which the Black-Scholes price matches that market price:
+Given a market option price, the objective is to find the volatility $\(\sigma\)$ for which the Black-Scholes price matches that market price:
 
 $$
 Price_{BS}(\sigma)=Price_{market}
 $$
 
-There is no direct closed-form solution for \(\sigma\), so the problem is solved numerically.
+There is no direct closed-form solution for $\(\sigma\)$ so the problem is solved numerically.
 
 I used the bisection method. The algorithm starts with a volatility interval and repeatedly divides it in two. At each iteration, the Black-Scholes price is calculated using the midpoint of the interval and compared with the market price.
 
@@ -142,8 +142,8 @@ $$
 
 For each simulation, the program:
 
-1. Generates a standard normal random variable \(Z\).
-2. Calculates the terminal price \(S_T\).
+1. Generates a standard normal random variable $\(Z\)$.
+2. Calculates the terminal price $\(S_T\)$.
 3. Calculates the option payoff.
 4. Repeats the simulation for a given number of paths.
 5. Calculates the average payoff.
@@ -215,13 +215,13 @@ $$
 SE\sqrt{N}
 $$
 
-which remains approximately constant when the Monte Carlo estimator behaves according to the expected \(1/\sqrt{N}\) convergence rate.
+which remains approximately constant when the Monte Carlo estimator behaves according to the expected $\(1/\sqrt{N}\)$ convergence rate.
 
 ## Antithetic Variates
 
 To reduce the Monte Carlo variance, I also implemented antithetic variates.
 
-Instead of generating only one value \(Z\), each simulation uses both:
+Instead of generating only one value $\(Z\)$, each simulation uses both:
 
 $$
 Z
