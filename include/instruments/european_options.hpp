@@ -3,8 +3,8 @@
 namespace quant {
 
     enum class OptionType {
-        Call, //droit d acheter
-        Put //droit de vendre
+        Call, 
+        Put 
     };
 
     class EuropeanOption {
