@@ -289,6 +289,3 @@ A natural extension is to investigate whether Deep Learning methods can be used 
 This approach is particularly interesting when the pricing model becomes more complex or when a very large number of valuations are required. The trade-off is that the neural network introduces an approximation error and requires an initial training phase, so it does not simply replace Monte Carlo in every situation.
 
 This would be an interesting direction for extending the project from classical quantitative finance methods towards scientific machine learning and neural-network-based pricing.
-
-
-The main focus of the project is the implementation itself: taking the mathematical formulas, understanding the numerical methods behind them, and translating them into a small C++ pricing engine.
